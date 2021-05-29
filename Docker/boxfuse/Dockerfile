@@ -12,3 +12,4 @@ WORKDIR /var/lib/tomcat9
 EXPOSE 8080
 CMD service tomcat9 start
 
+
