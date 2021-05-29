@@ -3,9 +3,9 @@ ENV TZ=Europe/Moscow
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt update -y
 RUN apt install -y default-jdk tomcat9 maven git
-RUN cd /tmp
+RUN cd /tmp/
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
-RUN cd boxfuse-sample-java-war-hello
+RUN /tmp/boxfuse-sample-java-war-hello/
 RUN mvn package
 RUN cp target/hello-*.war /var/lib/tomcat9/webapps/
 WORKDIR /var/lib/tomcat9
