@@ -6,7 +6,7 @@ RUN apt install -y default-jdk tomcat9 maven git
 RUN cd /tmp
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
 RUN cd boxfuse-sample-java-war-hello
-RUN mvm package
+RUN mvn package
 RUN cp target/hello-*.war /var/lib/tomcat9/webapps/
 WORKDIR /var/lib/tomcat9
 EXPOSE 8080
