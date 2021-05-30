@@ -9,6 +9,6 @@ RUN mvn -f /tmp/boxfuse-sample-java-war-hello/pom.xml package
 RUN cp /tmp/boxfuse-sample-java-war-hello/target/hello-*.war /var/lib/tomcat9/webapps/
 WORKDIR /var/lib/tomcat9
 EXPOSE 8080
-CMD service tomcat9 start
+CMD ["/usr/share/tomcat9/bin/catalina.sh", "run"]
 
 
