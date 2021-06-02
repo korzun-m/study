@@ -1,0 +1,19 @@
+---
+version: '3'
+services:
+  tomcat:
+    image: tomcat:9.0
+    ports:
+      - "8080:8080"
+    volumes:
+      - type: volume
+        source: data
+        target: /usr/local/tomcat/webapps
+  maven:
+    volumes:
+      - type: volume
+        source: data
+        target: /data
+
+volumes:
+  data:
